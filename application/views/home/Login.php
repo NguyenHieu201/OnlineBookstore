@@ -22,7 +22,7 @@ include VIEW_PATH . DS . "layout" . DS . "header.php"
       <div class="pass">Forgot Password?</div>
       <input type="submit" value="Login">
       <div class="signup_link">
-        Not a member? <a href="#">Signup</a>
+        Not a member? <a href="?p=Home&c=Login&a=register">Signup</a>
       </div>
     </form>
   </div>

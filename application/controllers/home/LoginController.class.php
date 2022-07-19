@@ -36,4 +36,12 @@ class LoginController extends Controller
     session_destroy();
     $this->redirect("?p=Home&c=Home&a=Home", "return Home");
   }
+
+  public function registerAction()
+  {
+    if (array_key_exists("username", $_POST)) {
+      echo "Hello world";
+      $_POST = array();
+    } else include VIEW_PATH . "home" . DS . "Register.php";
+  }
 }
