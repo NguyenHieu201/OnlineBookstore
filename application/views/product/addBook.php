@@ -6,7 +6,7 @@ include VIEW_PATH . DS . "layout" . DS . "header.php";
   <div class="card">
 
     <div>
-      <img id="img" src="" width="100" height="100" alt="Book Cover" onchange="" />
+      <img id="img" src="" width="100" height="100" alt="BookCover" onchange="" />
       <input type="file" name="image"
         onchange="document.getElementById('img').src = window.URL.createObjectURL(this.files[0])">
     </div>

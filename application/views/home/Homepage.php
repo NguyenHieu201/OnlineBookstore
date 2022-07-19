@@ -1,2 +1,5 @@
 <?php
-echo "Welcome to homepage";
+require VIEW_PATH . DS . "layout" . DS . "header.php";
+require CURR_VIEW_PATH . DS . "BestSeller.php";
+require CURR_VIEW_PATH . DS . "Recommend.php";
+require VIEW_PATH . DS . "layout" . DS . "nav.php";

@@ -4,12 +4,12 @@ class IndexController extends Controller
 {
   public function __construct()
   {
-    if ($this->accessAction() === false) {
+    if (!($this->accessAction())) {
       $this->redirect("?p=home&c=Login&a=login", message: "Access Denied");
     }
   }
 
-  public static function accessAction()
+  private function accessAction()
   {
     if (isset($_SESSION["user"])) {
       if ($_SESSION["user"] === "admin")
@@ -21,9 +21,11 @@ class IndexController extends Controller
 
   public function productAction()
   {
-    $bookModel = new BookModel("books");
-    $books = $bookModel->getBooks();
-    include VIEW_PATH . DS . "admin" . DS . "ProductList.php";
+    if ($this->accessAction()) {
+      $bookModel = new BookModel("books");
+      $books = $bookModel->getBooks();
+      include VIEW_PATH . DS . "admin" . DS . "ProductList.php";
+    }
   }
 
   public function editAction()
@@ -90,5 +92,10 @@ class IndexController extends Controller
       $bookModel->deleteBook($bookIsbn);
       $this->redirect(url: '?p=admin&c=Index&a=product', message: "Update Success", wait: 0);
     }
+  }
+
+  public function testAction()
+  {
+    include VIEW_PATH . "successful.php";
   }
 }

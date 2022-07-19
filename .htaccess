@@ -6,7 +6,6 @@
 
    RewriteEngine on
 
-
    # Send request via index.php
 
    RewriteCond %{REQUEST_FILENAME} !-f
@@ -20,10 +19,10 @@
    RewriteRule ^(.*)/(.*).css$ public/css/$2.css
 
    RewriteCond %{REQUEST_URI} ^(.*)/(.*).(js)$
-   RewriteRule ^(.*)/(.*).css$ public/js/$2.js
+   RewriteRule ^(.*)/(.*).js$ public/js/$2.js
 
    RewriteCond %{REQUEST_URI} ^(.*)/(.*).(png)$
-   RewriteRule ^(.*)/(.*).css$ public/img/$2.png
+   RewriteRule ^(.*)/(.*).png$ public/img/$2.png
 
 
 </IfModule>
