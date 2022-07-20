@@ -18,15 +18,20 @@ class LoginController extends Controller
           if ($username === $user["username"] && $password === $user["password"]) {
             $_SESSION["username"] = $username;
             $_SESSION["password"] = $password;
-            if ($user["level"] == 0) {
-              $_SESSION["user"] = "user";
-            } else
+            if ($user["level"] == 0) { {
+                $_SESSION["user"] = "user";
+                unset($_POST["username"]);
+                unset($_POST["password"]);
+                $this->redirect("?p=Home&c=Home&a=Home", "To home");
+              }
+            } else {
               $_SESSION["user"] = "admin";
+              unset($_POST["username"]);
+              unset($_POST["password"]);
+              $this->redirect("?p=admin&c=index&a=product", "To home");
+            }
           }
         }
-        unset($_POST["username"]);
-        unset($_POST["password"]);
-        $this->redirect("?p=Home&c=Home&a=Home", "To home");
       } else include CURR_VIEW_PATH . "Login.php";
     }
   }
