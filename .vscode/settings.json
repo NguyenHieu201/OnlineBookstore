@@ -10,6 +10,7 @@
     "registerbtn",
     "signin",
     "uplist",
+    "xmlhttp",
     "zipcode"
   ]
 }

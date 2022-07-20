@@ -40,8 +40,52 @@ class LoginController extends Controller
   public function registerAction()
   {
     if (array_key_exists("username", $_POST)) {
-      echo "Hello world";
+      # Get data from POST request
+      $username = $_POST["username"];
+      $name = $_POST["name"];
+      $address = $_POST["address"];
+      $city = $_POST["city"];
+      $country = $_POST["country"];
+      $zip = $_POST["zip"];
+      $email = $_POST["email"];
+      $password = $_POST["psw"];
+
+      # add new user to db
+      $userModel = new CustomerModel("customers");
+      $userModel->addUser([
+        'name' => $name,
+        'address' => $address,
+        'city' => $city,
+        'zip_code' => $zip,
+        'country' => $country,
+        'username' => $username,
+        'email' => $email,
+        'password' => $password,
+        'level' => 0
+      ]);
+
+      $_SESSION["username"] = $username;
+      $_SESSION["password"] = $password;
+      $_SESSION["user"] = "user";
+
       $_POST = array();
+      $this->redirect("?p=Home&c=Home&a=Home", "return Home");
     } else include VIEW_PATH . "home" . DS . "Register.php";
+  }
+
+  public function userExistAction()
+  {
+    $username = $_REQUEST['username'];
+    $userModel = new CustomerModel("customers");
+    $user = $userModel->getUser($username);
+    echo $user == false ? "false" : "true";
+  }
+
+  public function emailExistAction()
+  {
+    $email = $_REQUEST['email'];
+    $userModel = new CustomerModel("customers");
+    $user = $userModel->getEmail($email);
+    echo $user == false ? "false" : "true";
   }
 }

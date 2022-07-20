@@ -14,4 +14,16 @@ class CustomerModel extends Model
     $user = $this->db->getRow($sql);
     return $user;
   }
+
+  public function getEmail($email)
+  {
+    $sql = "select * from $this->table where email = " . '"' . "$email" . '"';
+    $user = $this->db->getRow($sql);
+    return $user;
+  }
+
+  public function addUser($user)
+  {
+    $this->insert($user);
+  }
 }
