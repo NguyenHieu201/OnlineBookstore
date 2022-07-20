@@ -1,6 +1,10 @@
 <?php
 class CustomerModel extends Model
 {
+  function __construct()
+  {
+    parent::__construct("customers");
+  }
   public function getUsers()
   {
     $sql = "select * from $this->table";

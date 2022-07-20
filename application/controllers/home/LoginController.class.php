@@ -12,15 +12,15 @@ class LoginController extends Controller
       if (array_key_exists("username", $_POST)) {
         $username = $_POST["username"];
         $password = $_POST["password"];
-        $CustomerModel = new CustomerModel("customers");
+        $CustomerModel = new CustomerModel();
         $user = $CustomerModel->getUser($username);
         if ($user != false) {
           if ($username === $user["username"] && $password === $user["password"]) {
             $_SESSION["username"] = $username;
             $_SESSION["password"] = $password;
-            if ($user["level"] === 0)
+            if ($user["level"] == 0) {
               $_SESSION["user"] = "user";
-            else
+            } else
               $_SESSION["user"] = "admin";
           }
         }
@@ -51,7 +51,7 @@ class LoginController extends Controller
       $password = $_POST["psw"];
 
       # add new user to db
-      $userModel = new CustomerModel("customers");
+      $userModel = new CustomerModel();
       $userModel->addUser([
         'name' => $name,
         'address' => $address,
@@ -76,7 +76,7 @@ class LoginController extends Controller
   public function userExistAction()
   {
     $username = $_REQUEST['username'];
-    $userModel = new CustomerModel("customers");
+    $userModel = new CustomerModel();
     $user = $userModel->getUser($username);
     echo $user == false ? "false" : "true";
   }
@@ -84,7 +84,7 @@ class LoginController extends Controller
   public function emailExistAction()
   {
     $email = $_REQUEST['email'];
-    $userModel = new CustomerModel("customers");
+    $userModel = new CustomerModel();
     $user = $userModel->getEmail($email);
     echo $user == false ? "false" : "true";
   }

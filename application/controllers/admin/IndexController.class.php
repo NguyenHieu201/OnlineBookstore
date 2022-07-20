@@ -22,7 +22,7 @@ class IndexController extends Controller
   public function productAction()
   {
     if ($this->accessAction()) {
-      $bookModel = new BookModel("books");
+      $bookModel = new BookModel();
       $books = $bookModel->getBooks();
       include VIEW_PATH . DS . "admin" . DS . "ProductList.php";
     }
@@ -32,13 +32,13 @@ class IndexController extends Controller
   {
     if (isset($_GET["book_isbn"])) {
       $bookIsbn = $_GET["book_isbn"];
-      $bookModel = new BookModel("books");
+      $bookModel = new BookModel();
       $book = $bookModel->editBook($bookIsbn);
       include VIEW_PATH . DS . "product" . DS . "editBook.php";
     } else {
       if (isset($_POST["book_isbn"])) {
         $bookIsbn = $_POST["book_isbn"];
-        $bookModel = new BookModel("books");
+        $bookModel = new BookModel();
         // Update book
         $image = $_FILES["image"]["tmp_name"];
         $imageFile = addslashes(file_get_contents($image));
@@ -63,7 +63,7 @@ class IndexController extends Controller
   public function addAction()
   {
     if (isset($_POST["book_title"])) {
-      $bookModel = new BookModel("books");
+      $bookModel = new BookModel();
       // Update book
       $image = $_FILES["image"]["tmp_name"];
       $imageFile = addslashes(file_get_contents($image));
@@ -88,7 +88,7 @@ class IndexController extends Controller
   {
     if (isset($_GET["book_isbn"])) {
       $bookIsbn = $_GET["book_isbn"];
-      $bookModel = new BookModel("books");
+      $bookModel = new BookModel();
       $bookModel->deleteBook($bookIsbn);
       $this->redirect(url: '?p=admin&c=Index&a=product', message: "Update Success", wait: 0);
     }

@@ -5,7 +5,7 @@ class HomeController extends Controller
   {
     $bestSeller = [2, 3, 4];
     $bookList = [];
-    $bookModel = new BookModel("books");
+    $bookModel = new BookModel();
     $bookAll = $bookModel->getBooks();
     $recommendSize = count($bookAll);
     foreach ($bestSeller as $bookId) {
@@ -17,5 +17,6 @@ class HomeController extends Controller
 
   public function CartAction()
   {
+    $this->redirect("?p=Cart&c=Cart&a=view", "view cart");
   }
 }

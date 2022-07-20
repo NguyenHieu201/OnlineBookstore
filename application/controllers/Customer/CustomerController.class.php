@@ -1,8 +1,6 @@
 <?php
 class CustomerController extends Controller
 {
-  private $isLogin = false;
-
   public function __construct()
   {
     if (!($this->accessAction())) {
