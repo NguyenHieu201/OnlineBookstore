@@ -5,9 +5,29 @@ class BookModel extends Model
   {
     parent::__construct("books");
   }
+
+  public function getAllBookId()
+  {
+    $sql = "select book_isbn from $this->table";
+    $booksId = $this->db->getAll($sql);
+    $id = [];
+    foreach ($booksId as $bookId) {
+      $id[] = $bookId["book_isbn"];
+    }
+    return $id;
+  }
+
   public function getBooks()
   {
     $sql = "select * from $this->table";
+    $books = $this->db->getAll($sql);
+    return $books;
+  }
+
+  public function getRecommendBook($number)
+  {
+    $number = 12;
+    $sql = "select * from $this->table limits $number";
     $books = $this->db->getAll($sql);
     return $books;
   }

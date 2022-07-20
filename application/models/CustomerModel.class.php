@@ -30,4 +30,14 @@ class CustomerModel extends Model
   {
     $this->insert($user);
   }
+
+  public function updatePassword($user)
+  {
+    $this->update($user);
+  }
+
+  public function deleteAccount($userId)
+  {
+    $this->delete($userId);
+  }
 }

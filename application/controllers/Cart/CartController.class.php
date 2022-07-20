@@ -19,6 +19,7 @@ class CartController extends Controller
         $bookList = $itemList["book"];
         $quantity = $itemList["quantity"];
         // redirect to cart view
+        include VIEW_PATH . "home" . DS . "Cart.php";
       }
     } else {
       echo '<script language="javascript">';

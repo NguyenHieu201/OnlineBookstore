@@ -38,23 +38,27 @@ class IndexController extends Controller
     } else {
       if (isset($_POST["book_isbn"])) {
         $bookIsbn = $_POST["book_isbn"];
-        $bookModel = new BookModel();
-        // Update book
-        $image = $_FILES["image"]["tmp_name"];
-        $imageFile = addslashes(file_get_contents($image));
-
         $bookTitle = $_POST["book_title"];
         $bookAuthor = $_POST["book_author"];
         $bookPrice = $_POST["book_price"];
         $publisher = $_POST["publisher"];
-        $bookModel->updateBook([
+        $bookModel = new BookModel();
+        // Update book
+        $image = $_FILES["image"]["tmp_name"];
+
+        $bookUpdate = [
           "book_isbn" => $bookIsbn,
           "book_title" => $bookTitle,
           "book_author" => $bookModel->cleanString($bookAuthor),
-          "book_image" => $imageFile,
           "book_price" => $bookPrice,
           "publisher" => $bookModel->cleanString($publisher)
-        ]);
+        ];
+        if ($image != null) {
+          $imageFile = addslashes(file_get_contents($image));
+          $bookUpdate["book_image"] = $imageFile;
+        }
+
+        $bookModel->updateBook($bookUpdate);
         $this->redirect(url: '?p=admin&c=Index&a=product', message: "Update Success", wait: 0);
       }
     }

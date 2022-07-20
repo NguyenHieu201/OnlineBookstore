@@ -3,7 +3,7 @@ class HomeController extends Controller
 {
   public function HomeAction()
   {
-    $bestSeller = [2, 3, 4];
+    $bestSeller = [5, 3, 4];
     $bookList = [];
     $bookModel = new BookModel();
     $bookAll = $bookModel->getBooks();
