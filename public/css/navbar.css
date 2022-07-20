@@ -1,0 +1,44 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+html{
+    font-family:  Helvetica, Arial, sans-serif;
+}
+.top-nav li{
+        display: inline-block;
+        position: relative;
+        line-height: 64px;
+        padding: 0 24px;
+}
+.top-nav li a{
+    text-decoration: none;
+    line-height: 64px;
+    padding: 0 24px;
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+
+}
+.top-nav
+{
+    height: 64px;
+    background-color:darkslategray;
+}
+
+.top-nav li:hover a{
+    color: black;
+    background-color: #ccc;
+}
+.top-nav li input{
+    line-height: 40px;
+    width: 450px;
+    font-size: 18px;
+    margin-right: 480px;
+    background-color:darkgray;
+}
+
+

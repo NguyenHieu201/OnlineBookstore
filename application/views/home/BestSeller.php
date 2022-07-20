@@ -1,5 +1,10 @@
 <!-- Slideshow container -->
-<div>Most popular</div>
+<?php
+require_once VIEW_PATH . "layout" . DS . "header.php";
+linkHead(['bestsl.css'])
+?>
+<div class="pic"> </div>
+<h3>Most popular</h3>
 <div class="slideshow-container">
 
   <?php
@@ -9,14 +14,14 @@
     echo '<div class="text">' . $book['book_title'] . '</div></div>';
   }
   ?>
+
 </div>
 
-<!-- Next and previous buttons -->
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
 
+</div>
+<br> <br>
+
+<hr size="2px">
 <script>
 let slideIndex = 0;
 showSlides();

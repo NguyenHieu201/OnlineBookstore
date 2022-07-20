@@ -1,7 +1,13 @@
+<?php
+require_once VIEW_PATH . "layout" . DS . "header.php";
+linkHead(['navbar.css'])
+?>
+
 <nav class="top-nav">
   <ul>
     <li><a href="?p=Home&c=Home&a=Home">Home</a></li>
-    <li><input type="text" placeholder="Search.."></li>
+    <li>  <input type="text" placeholder="Type to search..">
+  </li>
     <li><a href="?p=Home&c=Home&a=Cart">Cart</a></li>
     <?php
     if (!(isset($_SESSION["user"]))) {
@@ -12,4 +18,5 @@
     }
     ?>
   </ul>
+  <hr>
 </nav>
