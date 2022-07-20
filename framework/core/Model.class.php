@@ -180,12 +180,9 @@ class Model
     //Check if $pk is a single value or array, and construct where condition accordingly
 
     if (is_array($pk)) {
-
       // array
-
       $where = "{$this->fields['pk']} in (" . implode(',', $pk) . ")";
     } else {
-
       // single value
       $where = "{$this->fields['pk']}='$pk'";
     }

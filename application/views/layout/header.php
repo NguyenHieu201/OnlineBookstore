@@ -24,6 +24,7 @@ function linkHead($fileList)
       echo '<script src="' . $fileName . '"></script>';
     }
   }
+  echo '<link rel="stylesheet" href="' . "alert.css" . '">';
   echo '<title>Bookstore</title>';
   echo '</head>';
 };

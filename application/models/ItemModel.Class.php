@@ -25,4 +25,34 @@ class ItemModel extends Model
       "quantity" => $itemQuantity
     ];
   }
+
+  function deleteItem($cartId, $itemId)
+  {
+    $this->delete([$cartId, $itemId]);
+  }
+
+  function addItem($cartId, $itemId)
+  {
+    $sql = "select * from $this->table where orderid = " . '"' . $cartId . '"' . 'and book_id = "' . $itemId . '"';
+    $item = $this->db->getRow($sql);
+
+    // if item is not is db
+    // query will be insert new record
+    if ($item == false) {
+      $this->insert([
+        "orderid" => $cartId,
+        "book_id" => $itemId,
+        "quantity" => 1
+      ]);
+      return "New book is add to your cart";
+    } else {
+      // else update record
+      $this->update([
+        "orderid" => $cartId,
+        "book_id" => $itemId,
+        "quantity" => $item["quantity"] + 1
+      ]);
+      return "Your book quantity is increase";
+    }
+  }
 }

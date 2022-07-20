@@ -22,14 +22,28 @@ class CartController extends Controller
         include VIEW_PATH . "home" . DS . "Cart.php";
       }
     } else {
-      echo '<script language="javascript">';
-      echo 'alert("Please log in to view your cart")';
-      echo '</script>';
+      $this->redirect("?p=home&c=home&a=home", "To home");
     }
   }
 
   public function addAction()
   {
-    // Method post itemid and quantity
+    if (isset($_SESSION["username"])) {
+      $itemId = $_REQUEST["itemid"];
+      $orderId = $_SESSION["orderid"];
+      $itemModel = new ItemModel();
+      $res = $itemModel->addItem($orderId, $itemId);
+      echo $res;
+    }
+  }
+
+  public function deleteAction()
+  {
+    if (isset($_SESSION["username"])) {
+      $itemId = $_REQUEST["itemid"];
+      $orderId = $_SESSION["orderid"];
+      $itemModel = new ItemModel();
+      $res = $itemModel->deleteItem($orderId, $itemId);
+    }
   }
 }
