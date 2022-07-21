@@ -20,7 +20,11 @@ linkHead(['navbar.css', 'search.js'])
 </nav>
 
 <script>
-var countries = ["Afghanistan", "Albania"];
+var countries = ["Doing Good By Doing Good", "Programmable Logic Controllers",
+  "Professional JavaScript for Web Developers, 3rd Edition", "Beautiful JavaScript",
+  "Professional ASP.NET 4 in C# and VB", "Android Studio New Media Fundamentals",
+  "C++ 14 Quick Syntax Reference, 2nd Edition", "C# 6.0 in a Nutshell, 6th Edition"
+];
 autocomplete(document.getElementById("search"), countries);
 displayLogout();
 
