@@ -1,0 +1,75 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+}
+.infoWrapper{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: white;
+    padding: 5%;
+
+}
+.info{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+    
+}
+.changepassword{
+    margin: 5%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.del{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputfield{
+    font-size: x-large;
+    display: flex;
+    justify-content: space-between;
+}
+.tab{
+    width: 80%;
+}
+input{
+    width: 60%;
+    height: 3vh;
+}
+button{
+
+}
+.delbutton{
+    height: 100%;
+    width: 50%;
+}
+.updatebutton{
+    align-self: flex-end;
+    width: 10vh;
+    height: 5vh;
+
+}
+button{
+    background-color: aqua;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    border: none;
+}
+button:hover{
+    background-color: rgb(70, 173, 204);
+}
