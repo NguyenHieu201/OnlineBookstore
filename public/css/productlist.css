@@ -6,11 +6,9 @@ table {
     font-size: 17px;
   }
   
-  td {
+td {
     border: 2px solid black;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 thead{
     background-color:darkslategray;
@@ -51,8 +49,16 @@ input{
     float: right;
 
 }
+
+.logout-btn {
+    float: right;
+    width: 45px;
+    height: 34px';
+}
+
 input:hover{
     margin: 12px;
     transform: scale(1.05);
     color: black;
 }
+

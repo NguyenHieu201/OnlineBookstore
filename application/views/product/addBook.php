@@ -1,5 +1,6 @@
 <?php
 include VIEW_PATH . DS . "layout" . DS . "header.php";
+linkHead(["book.css"]);
 ?>
 
 <form action="?p=admin&c=Index&a=add" method="post" role="form" enctype="multipart/form-data">
@@ -14,6 +15,7 @@ include VIEW_PATH . DS . "layout" . DS . "header.php";
     <input type="text" name="book_author" value="" placeholder="Author" required>
     <input type="text" name="publisher" value="" placeholder="Publisher" required>
     <input type="number" step="0.01" name="book_price" value="" placeholder="Price" class="price" required>
-    <input type="submit" name="submit" value="Submit" class="btn" required>
+    <input type="submit" name="submit" value="Submit" class="button" required>
+    <div class="button cancel" style="width: inherit;"><a href="?p=admin&c=Index&a=product">Cancel</a></div>
   </div>
 </form>

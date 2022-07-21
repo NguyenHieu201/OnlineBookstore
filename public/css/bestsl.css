@@ -25,6 +25,7 @@ h3{
     width: 100%;
     min-height: 600px;
     background-color: gray;
+    display: block;
 }
 .slideshow-container{
 		  position: absolute;

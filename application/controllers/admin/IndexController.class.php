@@ -97,9 +97,4 @@ class IndexController extends Controller
       $this->redirect(url: '?p=admin&c=Index&a=product', message: "Update Success", wait: 0);
     }
   }
-
-  public function testAction()
-  {
-    include VIEW_PATH . "successful.php";
-  }
 }

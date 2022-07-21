@@ -1,6 +1,7 @@
 <?php
 include VIEW_PATH . DS . "layout" . DS . "header.php";
 include VIEW_PATH . DS . "layout" . DS . "nav.php";
+linkHead(["book.css"]);
 ?>
 
 <div class="card">

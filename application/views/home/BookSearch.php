@@ -33,6 +33,5 @@ linkHead(["search.css"]);
 <script>
 function showDetail(bookId) {
   window.location.href = '?p=home&c=home&a=bookdetail&bookid=' + bookId;
-
 }
 </script>

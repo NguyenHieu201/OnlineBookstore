@@ -28,7 +28,7 @@ linkHead(["cart.css"]);
         echo '<td class="name">' . $bookList[$i]["book_title"] . '</td>';
         echo '<td class="price">' . $bookList[$i]["book_price"] . 'd</td>';
         echo '<td class="soluong">';
-        echo '<input class="slpicker" name="quantity" type="number" value="' . $quantity[$i] . '" min="1" onchange="calBill()"> ';
+        echo '<input class="slpicker quantity" name="quantity" type="number" value="' . $quantity[$i] . '" min="1" onchange="calBill()"> ';
         echo '</td>';
         echo '<td><Button onclick="deleteItem(' . $bookList[$i]["book_isbn"] . ')">Delete</Button></td>';
         echo '</tr>';

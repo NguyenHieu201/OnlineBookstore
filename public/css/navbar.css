@@ -1,94 +1,124 @@
 
 *{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 
 }
 html{
-    font-family:  Helvetica, Arial, sans-serif;
+  font-family:  Helvetica, Arial, sans-serif;
 }
 .top-nav li{
-        display: inline-block;
-        position: relative;
-        line-height: 64px;
-        padding: 0 24px;
+      display: inline-block;
+      position: relative;
+      line-height: 64px;
+      padding: 0 16px;
 }
-.top-nav li a{
-    text-decoration: none;
-    line-height: 64px;
-    padding: 0 24px;
-    display: inline-block;
-    color: white;
-    text-transform: uppercase;
 
+ul.top-nav {
+  height: inherit;
+}
+
+.top-nav li a{
+  text-decoration: none;
+  line-height: 64px;
+  padding: 0 16px;
+  display: inline-block;
+  color: white;
+  text-transform: uppercase;
 }
 .top-nav
 {
-    height: 64px;
-    background-color:darkslategray;
+  width: 100%;
+  height: 64px;
+  background-color:darkslategray;
+  position: relative;
+  display: block;
 }
 
 .top-nav li:hover a{
-    color: black;
-    background-color: #ccc;
+  color: black;
+  background-color: #ccc;
 }
 .top-nav li input{
-    line-height: 40px;
-    width: 450px;
-    font-size: 18px;
-    margin-right: 480px;
-    background-color:darkgray;
+  line-height: 40px;
+  width: 100%;
+  font-size: 18px;
+  margin-right: 15px;
+  background-color:darkgray;
 }
 
 * { box-sizing: border-box; }
 body {
-  font: 16px Arial;
+font: 16px Arial;
 }
 .autocomplete {
-  /*the container must be positioned relative:*/
-  position: relative;
-  display: inline-block;
+/*the container must be positioned relative:*/
+position: relative;
+display: inline-block;
 }
 input {
-  border: 1px solid transparent;
-  background-color: #f1f1f1;
-  padding: 10px;
-  font-size: 16px;
+border: 1px solid transparent;
+background-color: #f1f1f1;
+padding: 10px;
+font-size: 16px;
 }
 input[type=text] {
-  background-color: #f1f1f1;
-  width: 100%;
+background-color: #f1f1f1;
+width: 100%;
 }
 input[type=submit] {
-  background-color: DodgerBlue;
-  color: #fff;
-}
-.autocomplete-items {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  border-bottom: none;
-  border-top: none;
-  z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
-  top: 100%;
-  left: 0;
-  right: 0;
-}
-.autocomplete-items div {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  border-bottom: 1px solid #d4d4d4;
-}
-.autocomplete-items div:hover {
-  /*when hovering an item:*/
-  background-color: #e9e9e9;
-}
-.autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important;
-  color: #ffffff;
+background-color: DodgerBlue;
+color: #fff;
 }
 
+.a-cart .a-login .a-logout {
+float: right;
+}
+
+.autocomplete-items {
+position: absolute;
+border: 1px solid #d4d4d4;
+border-bottom: none;
+border-top: none;
+z-index: 99;
+/*position the autocomplete items to be the same width as the container:*/
+top: 100%;
+left: 0;
+right: 0;
+}
+.autocomplete-items div {
+padding: 10px;
+cursor: pointer;
+background-color: #fff;
+border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+/*when hovering an item:*/
+background-color: #e9e9e9;
+}
+.autocomplete-active {
+/*when navigating through the items using the arrow keys:*/
+background-color: DodgerBlue !important;
+color: #ffffff;
+}
+
+nav  ul  li {
+  position: relative; /* add this for an anchor point*/
+  display: inline-block;
+  margin: 15px;
+  text-align: center;
+}
+
+.Dropdown {
+    position: absolute; /* add this to position the dropdown off the li parent */
+    top: 100%; /* put it at the very bottom of the li*/
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+.pic {
+  position: relative;
+}
 
