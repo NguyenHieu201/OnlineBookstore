@@ -40,7 +40,7 @@ linkHead(["cart.css"]);
       Total:
       <div class="totalnumber" id="bill"></div>
       <br></br>
-      <button>
+      <button style="width: 100px">
         Xac nhan thanh toan
       </button>
 

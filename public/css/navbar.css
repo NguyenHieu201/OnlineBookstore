@@ -15,6 +15,10 @@ html{
       padding: 0 16px;
 }
 
+li.a-profile {
+    margin: 0;
+}
+
 ul.top-nav {
   height: inherit;
 }
@@ -40,23 +44,14 @@ ul.top-nav {
   color: black;
   background-color: #ccc;
 }
-.top-nav li input{
-  line-height: 40px;
-  width: 100%;
-  font-size: 18px;
-  margin-right: 15px;
-  background-color:darkgray;
-}
+
 
 * { box-sizing: border-box; }
 body {
 font: 16px Arial;
 }
 .autocomplete {
-/*the container must be positioned relative:*/
-position: relative;
-display: inline-block;
-}
+/*the container must be positioned relative:*/position: relative;display: inline-block;}
 input {
 border: 1px solid transparent;
 background-color: #f1f1f1;
@@ -74,6 +69,7 @@ color: #fff;
 
 .a-cart .a-login .a-logout {
 float: right;
+margin: 0;
 }
 
 .autocomplete-items {
@@ -106,7 +102,7 @@ color: #ffffff;
 nav  ul  li {
   position: relative; /* add this for an anchor point*/
   display: inline-block;
-  margin: 15px;
+  margin: 0 15px;
   text-align: center;
 }
 

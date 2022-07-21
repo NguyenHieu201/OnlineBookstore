@@ -12,10 +12,10 @@ linkHead(['navbar.css', 'search.js'])
       </div>
     </li>
     <li class="a-cart"><a href="?p=cart&c=cart&a=view" onclick="checkLogin()">Cart</a></li>
-    <li class="a-login"><a href="?p=home&c=Login&a=login">Login</a></li>
-    <li class="a-profile"><a href="?p=Customer&c=Customer&a=Profile" style="display: none;" id="profile">Profile</a>
+    <li class="a-login"><a href="?p=home&c=Login&a=login" id="login">Login</a></li>
+    <li class="a-profile" style="display: none;"><a href="?p=Customer&c=Customer&a=Profile" id="profile">Profile</a>
     </li>
-    <li class="a-logout"><a href="?p=Home&c=Login&a=Logout" style="display: none;" id="logout">Logout</a></li>
+    <li class="a-logout" style="display: none;"><a href="?p=Home&c=Login&a=Logout" id="logout">Logout</a></li>
   </ul>
 </nav>
 
@@ -27,8 +27,9 @@ displayLogout();
 function displayLogout() {
   let isLogin = <?php echo isset($_SESSION["user"]) ? 1 : 0; ?>;
   if (isLogin === 1) {
-    document.getElementById("logout").style.display = "block";
-    document.getElementById("profile").style.display = "block";
+    document.getElementsByClassName("a-logout")[0].style.display = "inline-block";
+    document.getElementsByClassName("a-profile")[0].style.display = "inline-block";
+    document.getElementsByClassName("a-login")[0].style.display = "none";
   }
 }
 
